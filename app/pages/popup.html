@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Popup</title>
+  <script src="/lib/browser-polyfill.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content= "width=device-width, user-scalable=no"/>
+  <link rel="stylesheet" type="text/css" href="../styles/popup.css">
+</head>
+<body>
+  <div class='container'>
+    <p>Capture web content as evidence and upload it to Colander.</p>
+    <p>Selecting a Case is optional. You could always review your evidence later on Colander.</p>
+  </div>
+  <div class='container'>
+    <div>
+      <label for='capture-case-id'>Associate with case:</label>
+    </div>
+    <div>
+      <select id='capture-case-id' name='capture-case-id'>
+        <option value=''>------ No case selected ------</option>
+      </select>
+    </div>
+  </div>
+  <div class='container actions'>
+    <button role='capture-current-tab'>Capture current tab</button>
+    <span class='pending'>
+      <span class='icon rotate'>◒</span> <span class='message'></span>
+    </span>
+    <span class='error'>
+      <span class='icon fail'>✗</span> <span class='message'></span>
+    </span>
+  </div>
+  <script src="../scripts/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Options</title>
+  <script src="/lib/browser-polyfill.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content= "width=device-width, user-scalable=no"/>
+  <link rel="stylesheet" type="text/css" href="../styles/options.css">
+</head>
+<body>
+
+  <!--
+  <label>
+    <span class='label'>Example Option</span>
+    <span class='input'>
+      <input type="checkbox" name="examplOption" checked />
+    </span>
+    <div class='description'>A description</div>
+  </label>
+  -->
+
+  <label>
+    <span class='label'>Colander Server API URL</span>
+    <span class='input'>
+      <input type="text" name="colander-server-api-url" placeholder="https://colander.mycompany.org/api"/>
+    </span>
+    <div class='description'>The fully qualified server api url (e.g: https://colander.mycompany.org/api)</div>
+  </label>
+
+  <label>
+    <span class='label'>My Colander API Key</span>
+    <span class='input'>
+      <input type="text" name="colander-user-api-key"/>
+    </span>
+    <div class='description'>Your user API KEY on the given Colander server pointed by the URL</div>
+  </label>
+  
+  <label>
+    <span class='label'>Configuration status</span>
+    <span id='configuration-test' class='input'>
+      <span class='result pending'>
+        <span class='icon rotate'>◒</span> Checking ...
+      </span>
+      <span class='result success'>
+        <span class='icon success'>✔</span> Server connection success
+      </span>
+      <span class='result error'>
+        <span class='icon fail'>✗</span> Server connection fail : <span class='message'></span>
+      </span>
+    </span>
+    <div class='description'>Current extension configuration test</div>
+  </label>
+
+  <label>
+    <span class='label'>Save settings</span>
+    <span class='input'>
+      <input type="button" name="colander-settings-save" value='Save'/>
+      <span id='status'></span>
+    </span>
+    <div class='description'>Save above extension settings and make a connection test to your Colander server</div>
+  </label>
+
+  <script src="/lib/chrome-browser-polyfill.js"></script>
+  <script src="../scripts/options.js"></script>
+</body>
+</html>

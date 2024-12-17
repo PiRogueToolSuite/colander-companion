@@ -1,0 +1,107 @@
+label
+{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	line-height: 2em;
+	padding: 0.25em;
+	margin-bottom: 1em;
+
+	.label {
+		grid-column: 1 / 2;
+		grid-row: 1;
+	}
+	.input {
+		grid-column: 2 / -1;
+		grid-row: 1;
+		input:is([type=text], [type=select]) {
+			width: 100%;
+		}
+	}
+	.description
+	{
+		grid-column: 1 / -1;
+		grid-row: 2;
+		color: gray;
+	}
+	&:hover
+	{
+		background-color: rgba(113,34,218,0.1);
+	}
+}
+
+#configuration-test {
+	.result
+	{
+		display: none;
+	}
+	.visible
+	{
+		display: inline-block;
+	}
+}
+
+@keyframes spin {
+  from { transform: rotate(0); color: black; }
+  to   { transform: rotate(360deg); color: rgb(113,34,218); }
+}
+
+.icon
+{
+	display: inline-block;
+	font-size: 1.25em;
+	transform-origin: 50% 58%;
+}
+
+.success
+{
+	.icon {
+		color: green;
+	}
+}
+
+.error
+{
+	.icon
+	{
+		color: red;
+	}
+}
+
+.rotate
+{
+	animation: 1s linear infinite spin;
+}
+
+
+@media only screen and (max-width: 500px) {
+	:root {
+		--fsize: 1.25em;
+	}
+	body {
+		font-size: var(--fsize);
+		max-width: initial;
+	}
+	select, input {
+		font-size: calc(0.7 * var(--fsize));
+	}
+	button {
+		font-size: calc(0.7 * var(--fsize));
+	}
+	label {
+		grid-template-columns: 1fr;
+		.label {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.input {
+			grid-column: 1;
+			grid-row: 2;
+		}
+		.description
+		{
+			grid-column: 1;
+			grid-row: 3;
+			color: gray;
+		}
+	}
+}
