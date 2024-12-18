@@ -51,7 +51,9 @@ jobs:
 
       - name: "Sign Mozilla Addon"
         run: |-
-          npx web-ext sign --api-key="${{ secrets.MOZILLA_ADDONS_API_KEY }}" \
+          npx web-ext sign \
+            --source-dir app/ \
+            --api-key="${{ secrets.MOZILLA_ADDONS_API_KEY }}" \
             --api-secret="${{ secrets.MOZILLA_ADDONS_API_SECRET }}" \
             --channel=unlisted
 
