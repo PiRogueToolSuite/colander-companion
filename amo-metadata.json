@@ -1,0 +1,20 @@
+{
+  "version": {
+    "license": "AGPL-3.0-or-later"
+  },
+  "categories": {
+    "firefox": [
+      "download",
+      "privacy",
+      "security"
+    ]
+  },
+  "contributions_url": "https://opencollective.com/pts",
+  "requires_payment": false,
+  "homepage": {
+    "en-US": "https://github.com/PiRogueToolSuite/colander-companion"
+  },
+  "support_email": {
+    "en-US": "hello@pts-project.org"
+  }
+}

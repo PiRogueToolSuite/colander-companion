@@ -4,6 +4,20 @@ Collect web content as evidence for your Colander investigations.
 This web-extension is part of [PTS Project](https://github.com/PiRogueToolSuite)
 and is meant to work in combination with a [Colander server](https://github.com/PiRogueToolSuite/colander).
 
+# Supported devices
+
+  - Firefox desktop ( v133+ )
+  - Firefox android ( v133+ )
+  
+## To be confirmed
+  - Chrome (with side loaded extension)
+
+## Untested
+  - Safari
+
+## Known limitation
+  - Video tag thumbnail are renderer as black box on android devices
+
 # Development
 
 ## Project structure
@@ -17,7 +31,7 @@ app/
 src/                : colander companion sources
                       (those compiled to app/scripts)
 docs/               : github root page
-                      used to provide (at least) update.json
+                      used to provide (at least) updates.json
 webpack.config.js   : compilation rules
 ```
 

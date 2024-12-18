@@ -2,8 +2,17 @@
 	"name": "__MSG_appName__",
 	"short_name": "__MSG_appShortName__",
 	"description": "__MSG_appDescription__",
+
+	"author": "Christophe Andral",
+
+	"homepage_url": "https://pts-project.org/colander-companion/",
+
+	"developer": {
+		"name": "Christophe Andral",
+		"url": "https://pts-project.org/colander-companion/"
+	},
 	
-	"version": "0.0.1",
+	"version": "0.0.2",
 
 	"manifest_version": 2,
 	"default_locale": "en",
@@ -17,7 +26,7 @@
 
 	"background": {
 		"page": "pages/background.html",
-		"persistent": false
+		"persistent": true
 	},
 
 	"browser_action": {
@@ -85,8 +94,12 @@
 
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "{423633ff-8bea-435f-bafd-dcbf0f6b1625}"
+			"id": "{423633ff-8bea-435f-bafd-dcbf0f6b1625}",
+			"update_url": "https://pts-project.org/colander-companion/updates.json"
 		},
-		"gecko_android": {}
+		"gecko_android": {
+			"id": "{423633ff-8bea-435f-bafd-dcbf0f6b1625}",
+			"update_url": "https://pts-project.org/colander-companion/updates.json"
+		}
 	}
 }

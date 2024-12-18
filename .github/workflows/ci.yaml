@@ -25,7 +25,50 @@ jobs:
           npm install
           npm run dist
 
+      - name: 'Upload to Actions'
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: web-ext-artifacts/
+
       - name: 'Upload to Release'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: web-ext-artifacts/*
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
+
+  publish-mozilla:
+    name: "Publish Mozilla"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: [build]
+    if: ${{ github.event_name == 'release' }}
+
+    steps:
+
+      - name: "Sign Mozilla Addon"
+        run: |-
+          npx web-ext sign --api-key="${{ secrets.MOZILLA_ADDONS_API_KEY }}" \
+            --api-secret="${{ secrets.MOZILLA_ADDONS_API_SECRET }}" \
+            --channel=unlisted
+
+      - name: "Rename Signed Artifact"
+        working-directory: web-ext-artifacts
+        run: |-
+          ls -l .
+          mv *.xpi "colander_companion-firefox.xpi"
+          ls -l .
+
+      - name: "Upload to Actions"
+        uses: actions/upload-artifact@v4
+        with:
+          name: signed
+          path: web-ext-artifacts/
+
+      - name: "Upload to Release"
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -38,7 +81,7 @@ jobs:
     name: 'Mozilla Addon Update'
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [build]
+    needs: [publish-mozilla]
     if: ${{ github.event_name == 'release' }}
 
     steps:
@@ -48,9 +91,9 @@ jobs:
       - name: 'Mozilla Addon Update'
         uses: cssnr/mozilla-addon-update-action@v1
         with:
-          update: 'docs/update.json'
+          update: 'docs/updates.json'
           manifest: 'app/manifest.json'
-          url: 'https://github.com/PiRogueToolSuite/colander-companion/releases/download/{version}/colander_companion-{version}.zip'
+          url: 'https://github.com/PiRogueToolSuite/colander-companion/releases/download/{version}/colander_companion-firefox.xpi'
 
       - name: 'Commit files'
         run: |
@@ -62,4 +105,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: main

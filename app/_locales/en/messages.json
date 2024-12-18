@@ -8,7 +8,7 @@
     "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
   },
   "appDescription": {
-    "message": "Gather web content as you browse it.",
+    "message": "Collect web content as evidence for your Colander investigations",
     "description": "The description of the application"
   },
   "browserActionTitle": {
