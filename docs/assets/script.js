@@ -1,7 +1,7 @@
 async function fetch_versions()
 {
 	console.log('Fecthing versions ...');
-	let updatesResponse = await fetch('../updates.json');
+	let updatesResponse = await fetch('./updates.json');
 	if (!updatesResponse.ok) {
 		throw new Error("Can't fetch updates.json");
 	}
