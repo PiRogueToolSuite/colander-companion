@@ -5,10 +5,12 @@
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "webpack --mode=development --watch",
-    "dist": "webpack --mode=production && web-ext build"
+    "dist": "webpack --mode=production && web-ext build",
+    "page-dev": "http-server docs/ --port 4242"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^12.0.2",
+    "http-server": "^14.1.1",
     "web-ext": "^8.3.0",
     "webextension-polyfill": "^0.12.0",
     "webpack": "^5.97.1",

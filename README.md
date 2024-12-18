@@ -52,7 +52,17 @@ This web-extension mainly relies on SingleFile extension.
   * single-file-hooks-frames.js
   * single-file-zip.min.js
   * single-file-z-worker.js
-  
+
+## Modifying extension
+
+While the extension is running on desktop browser or android device,
+launch the webpack tool in a terminal:
+```
+npm run dev
+```
+
+You will need another detached terminal to side load the extension.
+
 ## Side load on devices
 
 ### Firefox desktop
@@ -90,8 +100,11 @@ Then, inject the extension on android device with:
 npx web-ext run -t firefox-android --android-device=123456ABCDE
 ```
 
+## Modifying 'Colander Companion' github page
 
-While the extension is running on the android device, launch the webpack tool in another terminal:
+Running the following target starts a temporary web-server.
 ```
-npm run dev
+npm run page-dev
 ```
+
+It serves `docs` folder content (allowing JS `fetch()` to work).
