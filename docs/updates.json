@@ -1,7 +1,12 @@
 {
   "addons": {
     "{423633ff-8bea-435f-bafd-dcbf0f6b1625}": {
-      "updates": []
+      "updates": [
+        {
+          "version": "0.0.2",
+          "update_link": "https://github.com/PiRogueToolSuite/colander-companion/releases/download/v0.0.2/colander_companion-firefox.xpi"
+        }
+      ]
     }
   }
 }
