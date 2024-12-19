@@ -19,7 +19,7 @@ async function fetch_versions()
 		let versionElem = document.createElement('a');
 		versionElem.classList.add('block');
 		versionElem.setAttribute('href', ver.update_link);
-		versionElem.setAttribute('title', "Download and install Colander Companion v${ver.version}");
+		versionElem.setAttribute('title', `Download and install Colander Companion v${ver.version}`);
 		versionElem.setAttribute('target', '_blank');
 		versionElem.textContent = `Colander Companion v${ver.version}`;
 
