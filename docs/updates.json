@@ -9,6 +9,10 @@
         {
           "version": "0.0.3",
           "update_link": "https://github.com/PiRogueToolSuite/colander-companion/releases/download/v0.0.3/colander_companion-firefox.xpi"
+        },
+        {
+          "version": "0.0.4",
+          "update_link": "https://github.com/PiRogueToolSuite/colander-companion/releases/download/v0.0.4/colander_companion-firefox.xpi"
         }
       ]
     }
