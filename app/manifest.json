@@ -97,9 +97,6 @@
 			"id": "{423633ff-8bea-435f-bafd-dcbf0f6b1625}",
 			"update_url": "https://pts-project.org/colander-companion/updates.json"
 		},
-		"gecko_android": {
-			"id": "{423633ff-8bea-435f-bafd-dcbf0f6b1625}",
-			"update_url": "https://pts-project.org/colander-companion/updates.json"
-		}
+		"gecko_android": {}
 	}
 }
